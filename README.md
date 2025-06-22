@@ -1,6 +1,5 @@
 # 🔍Net_Scan  
-
-
+![](/media1.PNG)
 
 # About
 ### A lightweight, fast, and beginner-friendly **Port Scanner** and **Subdomain Scanner** written in Python — designed for CTFs, network assessments.
@@ -33,14 +32,20 @@ Discovers live subdomains from a wordlist using HTTP & HTTPS methods.
 - [`termcolor`]
 - [`requests`]
 
-## Install
+## Install dependencies
 ```
 pip install requests termcolor
 ```
+##  Installation
+> 1. Clone the repository:
+   ```bash
+   git clone https://github.com/knightc0de/Net_sacn.git
+   cd Net_scan
+  ```
 ### lauch script
-> A simple Net_scan.sh launcher script allows selection between scanners with interactive options.
+> 2. A simple Net_scan.sh launcher script allows selection between scanners with interactive options.
 ```
-chmod +x Net_scan.sh
+chmod 700 Net_scan.sh
 ./Net_scan.sh
 
 ```
