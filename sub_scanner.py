@@ -3,7 +3,6 @@ from  argparse import ArgumentParser,FileType
 from  threading import Thread,Lock
 from termcolor import colored 
 import  time 
-import sys
 
 subdomain_list = []
 
