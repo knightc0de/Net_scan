@@ -39,7 +39,7 @@ pip install requests termcolor
 ##  Installation
 > 1. Clone the repository:
    ```bash
-   git clone https://github.com/knightc0de/Net_sacn.git
+   git clone https://github.com/knightc0de/Net_scan.git
    cd Net_scan
   ```
 ### lauch script
