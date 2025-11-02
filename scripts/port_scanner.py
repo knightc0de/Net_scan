@@ -15,7 +15,12 @@ class Net_Scan():
           self.ports = iter(range(self.start_port, self.end_port + 1))
           self.lock = Lock()
           print(colored((f"[+] Scaning {self.ip}"),"green"))
-    
+
+
+      def mac_dectect():
+          pass   
+
+            
       def threads_handling(self):
            pro_start_time = time.time()
            thread_list = []
