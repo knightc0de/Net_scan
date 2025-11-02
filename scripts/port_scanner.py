@@ -6,8 +6,12 @@ from termcolor import colored
 from  threading import Thread,Lock
 
 class Net_Scan():
+<<<<<<< HEAD
       def __init__(self,ip,start_ports,end_ports,threads=500,verbose=False,proto='tcp'):
           self.proto = proto
+=======
+      def __init__(self,ip,start_ports,end_ports,threads=500,verbose=False):
+>>>>>>> 77cd48efe1513149522e341acdf590a7f45209e7
           self.ip = ip
           self.start_port = start_ports
           self.end_port = end_ports
