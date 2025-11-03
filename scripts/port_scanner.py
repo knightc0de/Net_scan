@@ -73,7 +73,15 @@ class Net_Scan():
                            sys.stderr.write(colored(f"[!] Permission denied on UDP port {port}: {e}\n","red"))
                          u.close    
                          continue
-                  try:                
+                  try:  
+                      data,addr = u.recvfrom(1024)
+                  except socket.timout:
+                      with self.lock:
+                          print(colored(f"[-] UDP {port} open filtered (no response)", "yellow"))
+                  except ConnectionAbortedError:
+                      with self.lock:
+                          print(colored(f"[-] UDP port {port} closed ","red"))
+                                          
 
  
 if __name__ == "__main__":
