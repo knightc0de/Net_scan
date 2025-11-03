@@ -56,9 +56,26 @@ class Net_Scan():
                    with self.lock:
                     sys.stderr.write(colored(f"[-] Port {port} is closed or timed out\n","red"))
                     sys.exit(1)        
-            # udp 
-            
+            # udp
+         if self.proto in ('udp','both'):
+             while True:
+              try:
+                  port = next(self.ports)
+              except StopIteration:
+                     break  
+              try:
+                  u = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+                  u.settimeout(1.0)
+                  try:
+                      u.send(b'\x00',(self.ip,port)) 
+                  except PermissionError as e:
+                         with self.lock:
+                           sys.stderr.write(colored(f"[!] Permission denied on UDP port {port}: {e}\n","red"))
+                         u.close    
+                         continue
+                  try:                
 
+ 
 if __name__ == "__main__":
     parser = ArgumentParser(description="Just A Port Scanner",
                             epilog='Example: python %(prog)s -H 192.168.1.10 -s 1 -e 65535 -t 500 -v')
