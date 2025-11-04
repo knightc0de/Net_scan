@@ -78,12 +78,22 @@ class Net_Scan():
                   except socket.timout:
                       with self.lock:
                           print(colored(f"[-] UDP {port} open filtered (no response)", "yellow"))
-                  except ConnectionAbortedError:
+                  except ConnectionRefusedError:
                       with self.lock:
                           print(colored(f"[-] UDP port {port} closed ","red"))
-                                          
+                  except OSError as e:
+                      with self.lock:
+                          print(colored(f"[-] UDP port {port} closed {e}"),"red")                    
+                  else:
+                      with self.lock:
+                          print(colored(f"[+] UDP port {port} is open"),"green")       
+              finally:
+                   try:
+                     u.close()
+                   except Exception:
+                        pass 
 
- 
+
 if __name__ == "__main__":
     parser = ArgumentParser(description="Just A Port Scanner",
                             epilog='Example: python %(prog)s -H 192.168.1.10 -s 1 -e 65535 -t 500 -v')
