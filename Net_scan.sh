@@ -30,6 +30,7 @@ case "$opt" in
   1)
     echo -e "${YELLOW}\n[~] Launching Port Scanner...${NC}"
     read -p "Target IPv4: " ip
+    read -p "Protocol TCP, UDP or both : " proto
     read -p "Start Port (default=1): " start
     read -p "End Port (default=1000): " end
     read -p "Threads (default=500): " threads
