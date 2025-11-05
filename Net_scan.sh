@@ -36,9 +36,9 @@ case "$opt" in
     read -p "Threads (default=500): " threads
     read -p "Verbose? [y/N]: " verbose
     if [[ "$verbose" == "y" || "$verbose" == "Y" ]]; then
-      python3 ./scripts/port_scanner.py --host "$ip" -s "${start:-1}" -e "${end:-1000}" -t "${threads:-500}" -v
+      python3 ./scripts/port_scanner.py --host "$ip" --proto proto -s "${start:-1}" -e "${end:-1000}" -t "${threads:-500}" -v
     else
-      python3 ./scripts/port_scanner.py --host "$ip" -s "${start:-1}" -e "${end:-1000}" -t "${threads:-500}"
+      python3 ./scripts/port_scanner.py --host "$ip" --proto proto  -s "${start:-1}" -e "${end:-1000}" -t "${threads:-500}"
     fi
     ;;
   2)
