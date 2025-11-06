@@ -19,10 +19,6 @@ class Net_Scan():
           print(colored((f"[+] Scaning {self.ip}"),"green"))
 
 
-      def mac_detection():
-            pass
-
-      
       def threads_handling(self):
            pro_start_time = time.time()
            thread_list = []
