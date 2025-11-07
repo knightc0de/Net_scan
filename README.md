@@ -21,7 +21,7 @@
 ### 1. Net_Scan (Port Scanner)
 
 Scans TCP ports for a given host using multithreading.
-
+Scan UDP ports too
 ### 2. Net_Scan (Subdomain Scanner)
 
 Discovers live subdomains from a wordlist using HTTP & HTTPS methods.
