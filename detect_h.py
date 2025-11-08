@@ -1,1 +1,2 @@
-enter file content here
+class mac_detect()
+      pass
