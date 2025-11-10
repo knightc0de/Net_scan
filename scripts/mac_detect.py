@@ -16,8 +16,9 @@ class Mac_detect():
             ans,unsanswered = srp(self.packet,timeout=1,varbose=False)
             if ans:
                self.ans = ans 
-            else:
-                  print("no host are up :)") 
+            else: 
+                  sys.stderr.write(" no host are up :) ")
+                  sys.exit(1)
 
       def alive_host():
              pass
