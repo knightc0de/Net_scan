@@ -5,7 +5,7 @@ import scapy.all
 class Mac_detect():
       def __init__(self,host):
             self.host = host 
-      
+            self.host_alive  = {}
       def packet(self):
             layer_1 = Ether(dst="ff:ff:ff:ff:ff:ff")
             layer_2 = ARP(pdst=self.host)
@@ -14,7 +14,13 @@ class Mac_detect():
       
       def send_packet(self):
             ans,unsanswered = srp(self.packet,timeout=1,varbose=False)
+            if ans:
+               self.ans = ans 
+            else:
+                  print("no host are up :)") 
 
+      def alive_host():
+             pass
 
             
             
