@@ -26,7 +26,13 @@ class Mac_detect():
                  self.alive_host[ans.psrc] = [ans.hwsrc]
                   
       def print_alive(self):
-          
-            _
+          table = PrettyTable("IP","MAC","VENDOR")
+          for ip,mac in self.alive_host,items():
+             try:
+                  table.add_row([ip,mac,MacLookup(mac)])
+             except:
+                  table.add_row([ip,mac,"UNKOWN"])
+          print(table)
+            
             
             
