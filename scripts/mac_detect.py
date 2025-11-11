@@ -20,8 +20,10 @@ class Mac_detect():
                   sys.stderr.write(" no host are up :) ")
                   sys.exit(1)
 
-      def alive_host():
-             pass
+      def alive_host(self):
+             for sent,ans in self.ans:
+                 self.alive_host[ans.psrc] = [ans.hwsrc]
+                  
 
             
             
