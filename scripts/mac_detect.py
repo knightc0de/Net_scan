@@ -1,6 +1,7 @@
+from prettytable import PrettyTable
+from mac_vendor_lookup import MacLookup
 import sys
-import scapy.all
-
+import scapy.all  
 
 class Mac_detect():
       def __init__(self,host):
@@ -24,6 +25,8 @@ class Mac_detect():
              for sent,ans in self.ans:
                  self.alive_host[ans.psrc] = [ans.hwsrc]
                   
-
+      def print_alive(self):
+          
+            _
             
             
