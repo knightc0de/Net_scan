@@ -18,12 +18,23 @@ class Mac_detect():
               sys.exit(1)         
     
       def send_packet(self):
-            ans,unsanswered = srp(self.packet,timeout=1,verbose=False)
-            if ans:     
-               self.ans = ans 
-            else: 
-                  sys.stderr.write(" no host are up :) ")
-                  sys.exit(1)
+        try:
+             ans,unsanswered = srp(self.packet,timeout=1,verbose=False)
+        except PermissionError:
+               sys.stderr.write(
+                    "[!] Permission denied run as root "
+               )    
+               sys.exit(1)
+        except Exception as e:
+            sys.stderr.write(f"[!] Error sending ARP request: {e}\n"
+                             )
+            sys.exit(1)
+
+        if ans:     
+            self.ans = ans 
+        else:         
+            sys.stderr.write(" no host are up :) ")
+            sys.exit(0)
 
       def alive_host(self):
              for sent,ans in self.ans:
