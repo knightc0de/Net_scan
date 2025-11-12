@@ -27,14 +27,15 @@ class Mac_detect():
                   
       def print_alive(self):
           table = PrettyTable(["IP","MAC","VENDOR"])
-          for ip,mac in self.alive_host.items():
+          for ip,mac in self.host_alive.items():
              try:
                   table.add_row([ip,mac,MacLookup(mac)])
              except:
                   table.add_row([ip,mac,"UNKOWN"])
           print(table)
             
-scan = Mac_detect("192.168.1.4")   
+scan = Mac_detect("192.168.1.0/24")   
 scan.packet()
 scan.send_packet()
 scan.alive_host()
+scan.print_alive()
