@@ -1,7 +1,7 @@
 from prettytable import PrettyTable
 from mac_vendor_lookup import MacLookup
-import sys
-import scapy.all  
+from  scapy.all import  ARP, Ether, srp 
+import sys 
 
 class Mac_detect():
       def __init__(self,host):
@@ -14,8 +14,8 @@ class Mac_detect():
             self.packet = packet
       
       def send_packet(self):
-            ans,unsanswered = srp(self.packet,timeout=1,varbose=False)
-            if ans:
+            ans,unsanswered = srp(self.packet,timeout=1,verbose=False)
+            if ans:     
                self.ans = ans 
             else: 
                   sys.stderr.write(" no host are up :) ")
@@ -23,16 +23,18 @@ class Mac_detect():
 
       def alive_host(self):
              for sent,ans in self.ans:
-                 self.alive_host[ans.psrc] = [ans.hwsrc]
+                 self.host_alive[ans.psrc] = [ans.hwsrc]
                   
       def print_alive(self):
-          table = PrettyTable("IP","MAC","VENDOR")
-          for ip,mac in self.alive_host,items():
+          table = PrettyTable(["IP","MAC","VENDOR"])
+          for ip,mac in self.alive_host.items():
              try:
                   table.add_row([ip,mac,MacLookup(mac)])
              except:
                   table.add_row([ip,mac,"UNKOWN"])
           print(table)
             
-            
-            
+scan = Mac_detect("192.168.1.4")   
+scan.packet()
+scan.send_packet()
+scan.alive_host()
