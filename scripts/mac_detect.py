@@ -48,9 +48,23 @@ class Mac_detect():
                 return vendor 
           
            except VendorNotFoundError:
+               try:
+                    print(f"[!] Vendor not found for {mac} :( ")
+                    mac_lookup.update_vendors()
+                    vendor = mac_lookup.lookup(mac)
+                    return vendor 
+               except Exception:
+                    return "UNkNOWN"
+
+           except Exception:
+                return "UNKNOWN"                           
                         
       def print_alive(self):
           table = PrettyTable(["IP","MAC","VENDOR"])
+          table.align["IP"] = "1"
+          table.align["MAC"] = "1"
+          table.align["VENDOR"] = "1"
+          
           for ip,mac in self.alive_hosts.items():
              try:
                   table.add_row([ip,mac,MacLookup(mac)])
