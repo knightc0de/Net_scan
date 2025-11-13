@@ -64,13 +64,19 @@ class Mac_detect():
           table.align["IP"] = "1"
           table.align["MAC"] = "1"
           table.align["VENDOR"] = "1"
-          
+
+          if not self.alive_hosts:
+               print("[!] No hosts are found")
+
           for ip,mac in self.alive_hosts.items():
-             try:
-                  table.add_row([ip,mac,MacLookup(mac)])
-             except:
-                  table.add_row([ip,mac,"UNKOWN"])
+                  vendor = self.lookup_vendor(mac)
+                  table.add_row([ip,mac,vendor])
+
+          print("\n" + "=" * 65)
+          print(" Mac ADDr DETECTION ")
+          print("=" * 65)
           print(table)
+          print( "=" * 65 + "\n")
             
 scan = Mac_detect("192.168.1.0/24")   
 scan.packet()
