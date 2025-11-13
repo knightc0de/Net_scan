@@ -40,6 +40,15 @@ class Mac_detect():
              for sent,ans in self.ans:
                  self.alive_hosts[ans.psrc] = [ans.hwsrc]
                   
+      def vendor_(self,mac):
+           mac_lookup = MacLookup()
+
+           try:
+                vendor = mac_lookup.lookup(mac)  
+                return vendor 
+          
+           except VendorNotFoundError:
+                        
       def print_alive(self):
           table = PrettyTable(["IP","MAC","VENDOR"])
           for ip,mac in self.alive_hosts.items():
