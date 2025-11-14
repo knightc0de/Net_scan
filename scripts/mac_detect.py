@@ -77,6 +77,12 @@ class Mac_detect():
           print("=" * 65)
           print(table)
           print( "=" * 65 + "\n")
+
+if __name__ == "__main__":
+   if len(sys.argv) < 2:
+        print(f"Usage: python {sys.argv[0]} <target-ip-range>")
+        print("Example : mac_detect.py 192.168.1.0/24")
+        sys.exit(0) 
             
 scan = Mac_detect("192.168.1.0/24")   
 scan.packet()
