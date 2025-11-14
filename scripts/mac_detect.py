@@ -83,7 +83,11 @@ if __name__ == "__main__":
         print(f"Usage: python {sys.argv[0]} <target-ip-range>")
         print("Example : mac_detect.py 192.168.1.0/24")
         sys.exit(0) 
-            
+  
+   target = sys.argv[1]
+   print(f"\n [+] Scanning Network: {target}")
+   scanner = Mac_detect(target)
+
 scan = Mac_detect("192.168.1.0/24")   
 scan.packet()
 scan.send_packet()
