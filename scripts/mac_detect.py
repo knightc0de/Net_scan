@@ -1,5 +1,5 @@
 from prettytable import PrettyTable
-from mac_vendor_lookup import MacLookup
+from mac_vendor_lookup import MacLookup,VendorNotFoundError
 from  scapy.all import  ARP, Ether, srp 
 import sys 
 
@@ -88,8 +88,8 @@ if __name__ == "__main__":
    print(f"\n [+] Scanning Network: {target}")
    scanner = Mac_detect(target)
 
-scan = Mac_detect("192.168.1.0/24")   
-scan.packet()
-scan.send_packet()
-scan.alive_host()
-scan.print_alive()
+#scan = Mac_detect("192.168.1.0/24")   
+scanner.packet()
+scanner.send_packet()
+scanner.alive_host()
+scanner.print_alive()
