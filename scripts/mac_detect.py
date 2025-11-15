@@ -69,7 +69,7 @@ class Mac_detect():
                print("[!] No hosts are found")
 
           for ip,mac in self.alive_hosts.items():
-                  vendor = self.lookup_vendor(mac)
+                  vendor = self.vendor_(mac)
                   table.add_row([ip,mac,vendor])
 
           print("\n" + "=" * 65)
