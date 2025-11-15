@@ -88,7 +88,7 @@ if __name__ == "__main__":
    print(f"\n [+] Scanning Network: {target}")
    scanner = Mac_detect(target)
 
-#scan = Mac_detect("192.168.1.0/24")   
+   
 scanner.packet()
 scanner.send_packet()
 scanner.alive_host()
