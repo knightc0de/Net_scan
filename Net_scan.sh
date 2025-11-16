@@ -23,8 +23,9 @@ echo
 echo -e "${CYAN}Choose an option to run:${NC}"
 echo "1) Port Scanner"
 echo "2) Subdomain Scanner"
-echo "3) Exit"
-read -p "➤ Enter your option [1/2/3]: " opt
+echo "3)  Mac Address Detection"
+echo "4) Exit"
+read -p "➤ Enter your option [1/2/3/4]: " opt
 
 case "$opt" in
   1)
@@ -53,7 +54,10 @@ case "$opt" in
       python3 ./scripts/sub_scanner.py "$domain" -w "${wordlist:-wordlist.txt}" -t "${threads:-500}"
     fi
     ;;
-  3)
+  
+  3) pass
+  
+  4)
     echo -e "${RED} Exiting... ${NC}"
     exit 0
     ;;
