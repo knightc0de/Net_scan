@@ -38,7 +38,7 @@ class Mac_detect():
 
       def alive_host(self):
              for sent,ans in self.ans:
-                 self.alive_hosts[ans.psrc] = [ans.hwsrc]
+                 self.alive_hosts[ans.psrc] = ans.hwsrc
                   
       def vendor_(self,mac):
            mac_lookup = MacLookup()
@@ -49,7 +49,7 @@ class Mac_detect():
           
            except VendorNotFoundError:
                try:
-                    print(f"[!] Vendor not found for {mac} :( ")
+                    print(f"[!] Vendor not found for {mac} Updating vendor database...")
                     mac_lookup.update_vendors()
                     vendor = mac_lookup.lookup(mac)
                     return vendor 
@@ -68,7 +68,7 @@ class Mac_detect():
           if not self.alive_hosts:
                print("[!] No hosts are found")
 
-          for ip,mac in self.alive_hosts.items():
+          for ip, mac in self.alive_hosts.items():
                   vendor = self.vendor_(mac)
                   table.add_row([ip,mac,vendor])
 
