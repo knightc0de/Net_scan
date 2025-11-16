@@ -55,7 +55,8 @@ case "$opt" in
     fi
     ;;
   
-  3) pass
+  3) 
+      echo -e "${YELLOW}\n[~] Launching MAC Detection Scanner...${NC}"
   
   4)
     echo -e "${RED} Exiting... ${NC}"
