@@ -57,7 +57,7 @@ case "$opt" in
   
   3) 
       echo -e "${YELLOW}\n[~] Launching MAC Detection Scanner...${NC}"
-  
+      read ip "network rage " host
   4)
     echo -e "${RED} Exiting... ${NC}"
     exit 0
