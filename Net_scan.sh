@@ -58,6 +58,9 @@ case "$opt" in
   3) 
       echo -e "${YELLOW}\n[~] Launching MAC Detection Scanner...${NC}"
       read -p "Target IP Range (e.g., 192.168.1.0/24): " net_range
+      python3 ./scripts/mac_detect.py "$net_range"
+    ;;
+
   4)
     echo -e "${RED} Exiting... ${NC}"
     exit 0
