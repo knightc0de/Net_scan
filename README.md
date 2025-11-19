@@ -6,7 +6,11 @@
 
 ---
 
-# 📡 MAc_detection 
+# 📡 MAc_detection
+
+- reveal mac Adrr of the present devices in th network
+- check for vendor to .
+- 
 
 
 ##  Features
