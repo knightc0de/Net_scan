@@ -8,9 +8,11 @@
 
 # 📡 MAc_detection
 
-- reveal mac Adrr of the present devices in th network
-- check for vendor to .
-- 
+- Detects all active hosts in a subnet
+- Returns:
+  IP Address
+  MAC Address
+  Vendor (via mac-vendor-lookup)
 
 
 ##  Features
