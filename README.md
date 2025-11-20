@@ -10,10 +10,10 @@
 
 - Detects all active hosts in a subnet
 - Returns:
-  IP Address
-  MAC Address
+  IP Address,
+  MAC Address,
   Vendor (via mac-vendor-lookup)
-
+- PrettyTable visualization
 
 ##  Features
 
