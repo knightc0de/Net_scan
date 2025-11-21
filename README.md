@@ -40,6 +40,7 @@ Discovers live subdomains from a wordlist using HTTP & HTTPS methods.
 - Python 3.x
 - [`termcolor`]
 - [`requests`]
+- [`prettytable`]
 
 ## Install dependencies
 ```
